@@ -5,3 +5,4 @@ dotnet: 5.0
 solution: "./DomainHTN.sln"
 script:
   - dotnet restore
+  - dotnet test
