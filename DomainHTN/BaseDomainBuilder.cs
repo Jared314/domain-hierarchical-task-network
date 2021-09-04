@@ -12,13 +12,9 @@ namespace DomainHTN
         where DB : BaseDomainBuilder<DB, T>
         where T : IContext
     {
-        // ========================================================= FIELDS
-
         protected readonly Domain<T> _domain;
         protected List<ITask> _pointers;
         protected readonly IFactory _factory;
-
-        // ========================================================= CONSTRUCTION
 
         public BaseDomainBuilder(string domainName, IFactory factory)
         {
@@ -27,8 +23,6 @@ namespace DomainHTN
             _pointers = _factory.CreateList<ITask>();
             _pointers.Add(_domain.Root);
         }
-
-        // ========================================================= PROPERTIES
 
         public ITask Pointer
         {

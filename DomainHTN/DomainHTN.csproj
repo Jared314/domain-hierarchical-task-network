@@ -2,6 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>0.0.0</PackageVersion>
+        <Title>DomainHTN</Title>
+        <Authors>Jared Lobberecht</Authors>
+        <Copyright>Jared Lobberecht @ 2021</Copyright>
+        <PackageProjectUrl>https://github.com/Jared314/domain-hierarchical-task-network</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Jared314/domain-hierarchical-task-network</RepositoryUrl>
     </PropertyGroup>
 
 </Project>

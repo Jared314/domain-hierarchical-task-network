@@ -7,8 +7,6 @@ namespace DomainHTN.Tasks
 {
     public class PrimitiveTask : IPrimitiveTask
     {
-        // ========================================================= PROPERTIES
-
         public string Name { get; set; }
         public ICompoundTask Parent { get; set; }
         public List<ICondition> Conditions { get; } = new List<ICondition>();
@@ -16,14 +14,10 @@ namespace DomainHTN.Tasks
         public IOperator Operator { get; private set; }
         public List<IEffect> Effects { get; } = new List<IEffect>();
 
-        // ========================================================= VALIDITY
-
         public DecompositionStatus OnIsValidFailed(IContext ctx)
         {
             return DecompositionStatus.Failed;
         }
-
-        // ========================================================= ADDERS
 
         public ITask AddCondition(ICondition condition)
         {
@@ -43,16 +37,12 @@ namespace DomainHTN.Tasks
             return this;
         }
 
-        // ========================================================= SETTERS
-
         public void SetOperator(IOperator action)
         {
             if (Operator != null) throw new Exception("A Primitive Task can only contain a single Operator!");
 
             Operator = action;
         }
-
-        // ========================================================= FUNCTIONALITY
 
         public void ApplyEffects(IContext ctx)
         {
@@ -74,8 +64,6 @@ namespace DomainHTN.Tasks
             Operator?.Stop(ctx);
         }
 
-        // ========================================================= VALIDITY
-
         public bool IsValid(IContext ctx)
         {
             if (ctx.LogDecomposition) Log(ctx, $"PrimitiveTask.IsValid check");
@@ -95,8 +83,6 @@ namespace DomainHTN.Tasks
             if (ctx.LogDecomposition) Log(ctx, $"PrimitiveTask.IsValid:Success!", ConsoleColor.Green);
             return true;
         }
-
-        // ========================================================= LOGGING
 
         protected virtual void Log(IContext ctx, string description, ConsoleColor color = ConsoleColor.White)
         {

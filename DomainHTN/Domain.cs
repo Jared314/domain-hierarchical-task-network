@@ -6,21 +6,14 @@ namespace DomainHTN
 {
     public class Domain<T> : IDomain where T : IContext
     {
-        // ========================================================= FIELDS
-
         private Dictionary<int, Slot> _slots = null;
-
-        // ========================================================= CONSTRUCTION
 
         public Domain(string name)
         {
             Root = new TaskRoot { Name = name, Parent = null };
         }
-        // ========================================================= PROPERTIES
 
         public TaskRoot Root { get; }
-
-        // ========================================================= HIERARCHY HANDLING
 
         public void Add(ICompoundTask parent, ITask subtask)
         {

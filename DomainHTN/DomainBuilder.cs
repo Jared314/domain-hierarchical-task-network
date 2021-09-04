@@ -11,8 +11,6 @@ namespace DomainHTN
     public sealed class DomainBuilder<T> : BaseDomainBuilder<DomainBuilder<T>, T>
         where T : IContext
     {
-        // ========================================================= CONSTRUCTION
-
         public DomainBuilder(string domainName) : base(domainName, new DefaultFactory())
         {
         }

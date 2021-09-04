@@ -8,8 +8,6 @@ namespace DomainHTN.Contexts
 {
     public abstract class BaseContext : IContext
     {
-        // ========================================================= PROPERTIES
-
         public bool IsInitialized { get; protected set; } = false;
         public bool IsDirty { get; set; }
         public ContextState ContextState { get; set; } = ContextState.Executing;

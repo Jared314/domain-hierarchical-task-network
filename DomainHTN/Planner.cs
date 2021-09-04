@@ -13,15 +13,10 @@ namespace DomainHTN
     /// <typeparam name="T"></typeparam>
     public class Planner<T> where T : IContext
     {
-        // ========================================================= FIELDS
-
         private ITask _currentTask;
         private readonly Queue<ITask> _plan = new Queue<ITask>();
 
-        // ========================================================= FIELDS
         public TaskStatus LastStatus { get; protected set; }
-
-        // ========================================================= CALLBACKS
 
         /// <summary>
         ///		OnNewPlan(newPlan) is called when we found a new plan, and there is no
@@ -320,8 +315,6 @@ namespace DomainHTN
             }
         }
 
-        // ========================================================= RESET
-
         public void Reset(IContext ctx)
         {
             _plan.Clear();
@@ -332,8 +325,6 @@ namespace DomainHTN
             }
             _currentTask = null;
         }
-
-        // ========================================================= GETTERS
 
         /// <summary>
         ///     Get the current plan. This is not a copy of the running plan, so treat it as read-only.
