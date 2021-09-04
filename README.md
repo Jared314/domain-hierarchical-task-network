@@ -2,10 +2,10 @@
 A simple HTN planner for self-organizing workflows.
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Build status](https://travis-ci.org/ptrefall/fluid-hierarchical-task-network.svg?branch=master)
+![Build status](https://travis-ci.com/jared314/domain-hierarchical-task-network.svg?branch=master)
 
 ## Features
-* Fluid HTN is a total-order forward decomposition planner, as described by Troy Humphreys in his [GameAIPro article](http://www.gameaipro.com/GameAIPro/GameAIPro_Chapter12_Exploring_HTN_Planners_through_Example.pdf).
+* Domain HTN is a total-order forward decomposition planner, as described by Troy Humphreys in his [GameAIPro article](http://www.gameaipro.com/GameAIPro/GameAIPro_Chapter12_Exploring_HTN_Planners_through_Example.pdf).
 * Comes with a Domain Builder to simplify the design of code-oriented HTN domains.
 * Partial planning.
 * Domain splicing.
@@ -39,7 +39,7 @@ Effects apply world state change during planning, and optionally during executio
 * PlanOnly effects temporarily change the world state during planning, used as a prediction about the future. Its change on the world state is removed before plan execution. This can be useful when we need other systems to set the world state during execution.
 * PlanAndExecute effects work just like PlanOnly effects, only that during execution, when the task they represent complete its execution successfully, the effect is re-applied. This is useful in the cases where you don't have other systems to set the world state during execution.
 * Permanent effects are applied during planning, but not removed from the world state before execution. This can be very useful when there's some state we change only during planning, e.g. do this thing three times then do this other thing. It can also be useful when we want to update world state in our runtime code, where we definitely want our changes to be permanent.
-### Coding with Fluid HTN
+### Coding with Domain HTN
 First we need to set up a WorldState enum and a Context. This is the blackboard the planner uses to access state during its planning procedure.
 ```C#
 using System.Collections.Generic;
