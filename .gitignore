@@ -1,0 +1,10 @@
+/.vs/
+/*.user
+/.idea/
+/.vscode/
+
+/packages/
+/TestResults/
+
+/**/obj
+/**/bin
