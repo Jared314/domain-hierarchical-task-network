@@ -1,2 +1,6 @@
 language: csharp
+mono: none
+dotnet: 5.0.0
 solution: "./DomainHTN.sln"
+script:
+  - dotnet restore
