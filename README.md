@@ -2,7 +2,7 @@
 A simple HTN planner for self-organizing workflows.
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Build status](https://travis-ci.com/jared314/domain-hierarchical-task-network.svg?branch=master)
+![Build status](https://app.travis-ci.com/Jared314/domain-hierarchical-task-network.svg?branch=master)
 
 ## Features
 * Domain HTN is a total-order forward decomposition planner, as described by Troy Humphreys in his [GameAIPro article](http://www.gameaipro.com/GameAIPro/GameAIPro_Chapter12_Exploring_HTN_Planners_through_Example.pdf).
