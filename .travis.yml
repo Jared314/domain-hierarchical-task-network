@@ -1,6 +1,8 @@
 language: csharp
+dist: focal
+sudo: required
 mono: none
-dotnet: 5.0.0
+dotnet: 5
 solution: "./DomainHTN.sln"
 script:
   - dotnet restore
