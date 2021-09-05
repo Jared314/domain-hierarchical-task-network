@@ -2,7 +2,7 @@
 using DomainHTN.Conditions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DomainHTN.UnitTests
+namespace DomainHTN.Tests
 {
     [TestClass]
     public class FuncConditionTests

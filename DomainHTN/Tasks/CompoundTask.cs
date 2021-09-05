@@ -6,21 +6,16 @@ namespace DomainHTN.Tasks
 {
     public abstract class CompoundTask : ICompoundTask
     {
-        // ========================================================= PROPERTIES
-
         public string Name { get; set; }
         public ICompoundTask Parent { get; set; }
         public List<ICondition> Conditions { get; } = new List<ICondition>();
         public List<ITask> Subtasks { get; } = new List<ITask>();
-
-        // ========================================================= VALIDITY
 
         public virtual DecompositionStatus OnIsValidFailed(IContext ctx)
         {
             return DecompositionStatus.Failed;
         }
 
-        // ========================================================= ADDERS
 
         public ITask AddCondition(ICondition condition)
         {
@@ -33,8 +28,6 @@ namespace DomainHTN.Tasks
             Subtasks.Add(subtask);
             return this;
         }
-
-        // ========================================================= DECOMPOSITION
 
         public DecompositionStatus Decompose(IContext ctx, int startIndex, out Queue<ITask> result)
         {
@@ -52,8 +45,6 @@ namespace DomainHTN.Tasks
 
         protected abstract DecompositionStatus OnDecomposeSlot(IContext ctx, Slot task, int taskIndex, int[] oldStackDepth, out Queue<ITask> result);
 
-        // ========================================================= VALIDITY
-
         public virtual bool IsValid(IContext ctx)
         {
             foreach (var condition in Conditions)
@@ -68,8 +59,6 @@ namespace DomainHTN.Tasks
 
             return true;
         }
-
-        // ========================================================= LOGGING
 
         protected virtual void Log(IContext ctx, string description, ConsoleColor color = ConsoleColor.White)
         {

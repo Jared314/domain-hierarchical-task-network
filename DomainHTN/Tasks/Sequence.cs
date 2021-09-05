@@ -5,11 +5,7 @@ namespace DomainHTN.Tasks
 {
     public class Sequence : CompoundTask, IDecomposeAll
     {
-        // ========================================================= FIELDS
-
         protected readonly Queue<ITask> Plan = new Queue<ITask>();
-
-        // ========================================================= VALIDITY
 
         public override bool IsValid(IContext ctx)
         {
@@ -30,8 +26,6 @@ namespace DomainHTN.Tasks
             if (ctx.LogDecomposition) Log(ctx, $"Sequence.IsValid:Success!", ConsoleColor.Green);
             return true;
         }
-
-        // ========================================================= DECOMPOSITION
 
         /// <summary>
         ///     In a Sequence decomposition, all sub-tasks must be valid and successfully decomposed in order for the Sequence to

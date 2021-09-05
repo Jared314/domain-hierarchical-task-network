@@ -1,10 +1,8 @@
-﻿
-using DomainHTN;
-using DomainHTN.Tasks;
+﻿using DomainHTN.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace DomainHTN.UnitTests
+namespace DomainHTN.Tests
 {
     [TestClass]
     public class DomainBuilderTests

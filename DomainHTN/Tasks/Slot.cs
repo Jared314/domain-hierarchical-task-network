@@ -6,29 +6,21 @@ namespace DomainHTN.Tasks
 {
     public class Slot : ITask
     {
-        // ========================================================= PROPERTIES
-
         public int SlotId { get; set; }
         public string Name { get; set; }
         public ICompoundTask Parent { get; set; }
         public List<ICondition> Conditions { get; } = null;
         public ICompoundTask Subtask { get; private set; } = null;
 
-        // ========================================================= VALIDITY
-
         public DecompositionStatus OnIsValidFailed(IContext ctx)
         {
             return DecompositionStatus.Failed;
         }
 
-        // ========================================================= ADDERS
-
         public ITask AddCondition(ICondition condition)
         {
             throw new Exception("Slot tasks does not support conditions.");
         }
-
-        // ========================================================= SET / REMOVE
 
         public bool Set(ICompoundTask subtask)
         {
@@ -46,8 +38,6 @@ namespace DomainHTN.Tasks
             Subtask = null;
         }
 
-        // ========================================================= DECOMPOSITION
-
         public DecompositionStatus Decompose(IContext ctx, int startIndex, out Queue<ITask> result)
         {
             if(Subtask != null)
@@ -59,16 +49,12 @@ namespace DomainHTN.Tasks
             return DecompositionStatus.Failed;
         }
 
-        // ========================================================= VALIDITY
-
         public virtual bool IsValid(IContext ctx)
         {
             var result = Subtask != null;
             if (ctx.LogDecomposition) Log(ctx, $"Slot.IsValid:{(result ? "Success" : "Failed")}!", result ? ConsoleColor.Green : ConsoleColor.Red);
             return result;
         }
-
-        // ========================================================= LOGGING
 
         protected virtual void Log(IContext ctx, string description, ConsoleColor color = ConsoleColor.White)
         {

@@ -1,9 +1,8 @@
 ﻿using System;
-using DomainHTN;
 using DomainHTN.Operators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DomainHTN.UnitTests
+namespace DomainHTN.Tests
 {
     [TestClass]
     public class FuncOperatorTests

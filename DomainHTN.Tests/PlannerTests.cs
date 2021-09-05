@@ -1,12 +1,11 @@
 ﻿using System;
-using DomainHTN;
 using DomainHTN.Tasks;
 using DomainHTN.Conditions;
 using DomainHTN.Effects;
 using DomainHTN.Operators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Fluid_HTN.UnitTests
+namespace DomainHTN.Tests
 {
     [TestClass]
     public class PlannerTests

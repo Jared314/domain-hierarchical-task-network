@@ -3,12 +3,22 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>HTN Planner Framework</Description>
         <PackageVersion>0.0.0</PackageVersion>
+        <AssemblyVersion>0.0.0</AssemblyVersion>
         <Title>DomainHTN</Title>
         <Authors>Jared Lobberecht</Authors>
-        <Copyright>Jared Lobberecht @ 2021</Copyright>
+        <Copyright>Copyright (c) 2021 Jared Lobberecht</Copyright>
         <PackageProjectUrl>https://github.com/Jared314/domain-hierarchical-task-network</PackageProjectUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <RepositoryUrl>https://github.com/Jared314/domain-hierarchical-task-network</RepositoryUrl>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="..\LICENSE" Pack="true" PackagePath="">
+        <Link>LICENSE</Link>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
 
 </Project>

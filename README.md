@@ -1,5 +1,5 @@
 # Domain Hierarchical Task Network
-A simple HTN planner for self-organizing workflows.
+A simple HTN planner for self-organizing workflows. Forked from [Fluid-HTN](https://github.com/ptrefall/fluid-hierarchical-task-network).
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Build status](https://app.travis-ci.com/Jared314/domain-hierarchical-task-network.svg?branch=master)

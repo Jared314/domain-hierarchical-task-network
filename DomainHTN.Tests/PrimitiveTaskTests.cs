@@ -1,12 +1,11 @@
 ﻿using System;
-using DomainHTN;
 using DomainHTN.Conditions;
 using DomainHTN.Effects;
 using DomainHTN.Operators;
 using DomainHTN.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DomainHTN.UnitTests
+namespace DomainHTN.Tests
 {
     [TestClass]
     public class PrimitiveTaskTests

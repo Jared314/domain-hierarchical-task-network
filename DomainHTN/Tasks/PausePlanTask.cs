@@ -6,21 +6,15 @@ namespace DomainHTN.Tasks
 {
     public class PausePlanTask : ITask
     {
-        // ========================================================= PROPERTIES
-
         public string Name { get; set; }
         public ICompoundTask Parent { get; set; }
         public List<ICondition> Conditions { get; } = null;
         public List<IEffect> Effects { get; } = null;
 
-        // ========================================================= VALIDITY
-
         public DecompositionStatus OnIsValidFailed(IContext ctx)
         {
             return DecompositionStatus.Failed;
         }
-
-        // ========================================================= ADDERS
 
         public ITask AddCondition(ICondition condition)
         {
@@ -32,21 +26,15 @@ namespace DomainHTN.Tasks
             throw new Exception("Pause Plan tasks does not support effects.");
         }
 
-        // ========================================================= FUNCTIONALITY
-
         public void ApplyEffects(IContext ctx)
         {
         }
-
-        // ========================================================= VALIDITY
 
         public bool IsValid(IContext ctx)
         {
             if (ctx.LogDecomposition) Log(ctx, $"PausePlanTask.IsValid:Success!");
             return true;
         }
-
-        // ========================================================= LOGGING
 
         protected virtual void Log(IContext ctx, string description)
         {
